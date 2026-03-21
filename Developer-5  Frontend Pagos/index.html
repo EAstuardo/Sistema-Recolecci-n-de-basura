@@ -1,0 +1,124 @@
+<?php include 'com/conexion.php'; ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Pagos – Recolectora</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active"><span class="nav-label">Pagos</span></a>
+      <a href="#" class="nav-item"><span class="nav-label">Clientes</span></a>
+      <a href="#" class="nav-item"><span class="nav-label">Colonias</span></a>
+      <a href="#" class="nav-item"><span class="nav-label">Usuarios</span></a>
+      <a href="#" class="nav-item"><span class="nav-label">Recibos</span></a>
+    </nav>
+  </aside>
+
+  <div class="content-wrap">
+    <header>
+      <h1>Pagos</h1>
+      <div class="logo">
+        <img src="logo.jpeg" alt="Logo"/>
+      </div>
+    </header>
+
+    <main>
+      <div>
+        <p class="section-title">Resumen</p>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <p class="stat-label">Clientes Pagados</p>
+            <p class="stat-value" id="countPagados">–</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Clientes Pendientes</p>
+            <p class="stat-value" id="countPendientes">–</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Total Clientes</p>
+            <p class="stat-value" id="countTotal">–</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-title">Lista de Clientes</p>
+        <div class="toolbar" style="margin-bottom:20px;">
+          <input class="search-box" type="text" id="searchInput" placeholder="Buscar cliente por nombre o colonia…"/>
+          <button class="filter-btn active" onclick="setFilter(this,'todos')">Todos</button>
+          <button class="filter-btn"        onclick="setFilter(this,'pagado')">Pagados</button>
+          <button class="filter-btn danger"  onclick="setFilter(this,'pendiente')">Pendientes</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th class="hide-sm">Colonia</th>
+                <th class="hide-sm">Monto mensual</th>
+                <th>Estado</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody id="clientTableBody">
+              <tr><td colspan="5" style="text-align:center;padding:30px;color:var(--muted)">Cargando clientes…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<div class="overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="close-modal" onclick="closeModal()">✕</button>
+    <p class="modal-header">Registrar Pago</p>
+    <p class="modal-sub" id="modalSubtitle">Cliente seleccionado</p>
+    <div class="form-group">
+      <label>Monto pagado (Q)</label>
+      <input type="number" id="montoPago" placeholder="0.00" min="0" step="0.01"/>
+    </div>
+    <div class="form-group">
+      <label>Mes pagado</label>
+      <input type="month" id="mesPagado"/>
+    </div>
+    <div class="form-group">
+      <label>Fecha de pago</label>
+      <input type="date" id="fechaPago"/>
+    </div>
+    <div class="form-group">
+      <label>Método de pago</label>
+      <select id="metodoPago">
+        <option value="">Seleccionar…</option>
+        <option value="EFECTIVO">Efectivo</option>
+        <option value="TRANSFERENCIA">Transferencia</option>
+        <option value="CHEQUE">Cheque</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Observaciones (opcional)</label>
+      <input type="text" id="notasPago" placeholder="Ej: pago parcial, adelanto…"/>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel"  onclick="closeModal()">Cancelar</button>
+      <button class="btn-confirm" onclick="confirmarPago()">Confirmar Pago</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
