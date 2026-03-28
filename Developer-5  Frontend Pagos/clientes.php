@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 
 require_once "conexion.php";
 
-$mes_actual = isset($_GET['mes']) ? $_GET['mes'] : '2025-01';
+$mes_actual = isset($_GET['mes']) ? $_GET['mes'] : date("Y-m");
 
 $sql = "
     SELECT
@@ -34,7 +34,7 @@ $stmt = $conexion->prepare($sql);
 $stmt->bind_param("s", $mes_actual);
 $stmt->execute();
 $result = $stmt->get_result();
-$clientes = $result->fetch_all(MYSQLI_ASSOC);
+$clientes = $result->fetch_all(MYSQLI_ASSOC) ?? [];
 
 echo json_encode($clientes);
 ?>
