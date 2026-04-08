@@ -1,0 +1,105 @@
+/* Variables de color para modo oscuro */
+body[data-theme="dark"]
+{
+    --color-fondo: #1c1818;
+    --color-texto: #f5f5f5;
+    --color-navbar: #23272a;
+    --color-menu-bg: #202b23;
+    --color-menu-text: #b6e2b3;
+    --color-menu-hover: #2e3b2e;
+    --color-kpi-verde: #7fff7a;
+    --color-kpi-amarillo: #ffb300;
+    --color-kpi-rojo: #ff5c5c;
+    --color-tarjeta-bg: #23272a;
+    --color-footer-bg: #23272a;
+    --color-alerta-bg: #2e2e2e;
+    --color-borde: #333c3a;
+}
+
+/* Fondo general */
+body {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* Navbar */
+.navbar {
+    background: var(--color-navbar);
+    color: var(--color-texto);
+}
+
+/* Menú lateral */
+.menu-lateral {
+    background: var(--color-menu-bg);
+    color: var(--color-menu-text);
+}
+.menu-lateral a:hover, .menu-lateral a.activo {
+    background: var(--color-menu-hover);
+    color: var(--color-menu-text);
+}
+
+/* Panel principal */
+.panel-principal {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* Tarjetas KPI */
+.tarjeta-kpi {
+    background: var(--color-tarjeta-bg);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+.tarjeta-kpi.verde { border-left: 6px solid var(--color-kpi-verde); }
+.tarjeta-kpi.amarillo { border-left: 6px solid var(--color-kpi-amarillo); }
+.tarjeta-kpi.rojo { border-left: 6px solid var(--color-kpi-rojo); }
+
+/* Footer */
+.footer {
+    background: var(--color-footer-bg);
+    color: #bdbdbd;
+}
+
+/* Dropdown y menú de opciones */
+.dropdown-opciones {
+    background: #23272a;
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+
+/* Alertas */
+.alertas-recientes {
+    background: var(--color-alerta-bg);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+/* Botón activo para modo oscuro */
+#btn-modo-oscuro.activo {
+    border-bottom: 2px solid var(--color-kpi-verde);
+    background: #26332a;
+}
+
+/* css/modo_oscuro.css */
+
+
+/* Ajustes específicos para el modo oscuro que no se resuelven solo con variables */
+body[data-theme="dark"] .footer {
+    color: #bdbdbd;
+}
+
+body[data-theme="dark"] .dropdown-opciones {
+    background: #23272a;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+}
+
+/* Invertir colores de iconos si es necesario */
+body[data-theme="dark"] .logo {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* Estilo del botón activo en configuración (si decides mantener botones) */
+body[data-theme="dark"] #btn-modo-oscuro.activo {
+    border-bottom: 2px solid var(--color-kpi-verde);
+    background: #26332a;
+}

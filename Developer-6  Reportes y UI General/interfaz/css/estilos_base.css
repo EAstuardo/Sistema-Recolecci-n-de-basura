@@ -1,0 +1,234 @@
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    background: var(--color-fondo, #f5f5f5);
+    color: var(--color-texto, #222);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 0 24px;
+    background: var(--color-navbar, #fff);
+    box-shadow: 0 5px 8px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 46px;
+    margin-right: 30px;
+    border-radius: 7px;
+}
+
+.titulo-app {
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.buscador {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 260px;
+    outline: none;
+    font-size: 1em;
+}
+
+.navbar-right button {
+    background: none;
+    border: none;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.icono-modo {
+    width: 28px;
+    height: 28px;
+}
+
+.icono-alerta, .icono-usuario {
+    margin-left: 12px;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    background-size: contain;
+}
+
+/* Menú lateral */
+.menu-lateral {
+    background: var(--color-menu-bg, #333);
+    color: var(--color-menu-text, #fff);
+    height: 100vh;
+    padding-top: 56px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+    overflow-y: auto;
+}
+
+.menu-lateral a {
+    display: block;
+    padding: 14px 24px;
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.menu-lateral a:hover, .menu-lateral a.activo {
+    background: var(--color-menu-hover, #255077);
+}
+
+/* Panel principal */
+.panel-principal {
+    padding: 32px 24px 24px 24px;
+    background: var(--color-fondo, #f5f5f5);
+    min-height: calc(100vh - 56px);
+}
+
+/* Tarjetas KPI */
+.tarjetas-kpi {
+    margin-bottom: 24px;
+}
+
+.tarjeta-kpi {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    padding: 20px 28px;
+    min-width: 220px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+}
+
+.tarjeta-kpi h2 {
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+
+.tarjeta-kpi .kpi-label {
+    font-size: 1em;
+    color: #888;
+}
+
+.tarjeta-kpi.verde { border-left: 6px solid #4caf50; }
+.tarjeta-kpi.amarillo { border-left: 6px solid #ffb300; }
+.tarjeta-kpi.rojo { border-left: 6px solid #e53935; }
+
+/* Botón de menú móvil */
+.btn-menu-movil img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 16px 0;
+    background: var(--color-navbar, #fff);
+    color: #888;
+    font-size: 0.95em;
+    margin-top: 24px;
+}
+
+/* Menú de opciones (3 puntos) */
+.menu-opciones {
+    position: relative;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.icono-opciones {
+    width: 28px;
+    height: 28px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.menu-opciones {
+    display: flex;
+    justify-content: flex-end; /*  Mueve el botón a la derecha */
+    position: relative; /* necesario para posicionar el dropdown */
+}
+
+/* BOTÓN DE LOS 3 PUNTOS */
+#btn-opciones {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: #d1cf3d;
+    padding: 6px 9px;
+    border-radius: 8px;
+}
+
+#btn-opciones:hover {
+    background: rgba(61, 214, 145, 0.12);
+}
+
+/* ICONO */
+.icono-opciones {
+    width: 24px;
+    height: 24px;
+}
+
+/* MENÚ DESPLEGABLE */
+.dropdown-opciones {
+    position: absolute;
+    top: 40px;
+    right: 0; /*  Alinea el menú a la derecha */
+
+    /*  AQUÍ ESTÁ EL FONDO DEL MENÚ  */
+    background: white; /* ←  */
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(112, 204, 139, 0.562);
+    min-width: 180px;
+    z-index: 100;
+}
+
+/* BOTONES DEL MENÚ */
+.dropdown-opciones button {
+    width: 100%;
+    padding: 12px 18px;
+    background: none; /* sin fondo por defecto */
+    border: 2px solid transparent;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1em;
+
+    color: #42b883;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    border-radius: 6px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; 
+}
+
+/* EFECTO HOVER */
+.dropdown-opciones button:hover {
+    background: #e0f7fa; /* ← color al pasar el mouse */
+    border-color: #2d6a4f;
+    color: #1b4332;
+}
+/* Botón activo para modo claro/oscuro */
+#btn-modo-claro.activo, #btn-modo-oscuro.activo {
+    border-bottom: 2px solid #4caf50;
+    background: #e8f5e9;
+}
