@@ -1,0 +1,111 @@
+/* --- Estructura base --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Panel principal y menú lateral */
+.panel-principal {
+    margin-left: 220px;
+    transition: margin-left 0.3s;
+}
+.menu-lateral {
+    width: 220px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 100;
+    transition: left 0.3s;
+}
+
+/* Menú desplegable oculto por defecto */
+.btn-menu-movil {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 200;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Tarjetas KPI en fila */
+.tarjetas-kpi {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* --- Responsivo para tablets y móviles --- */
+@media (max-width: 1024px) {
+    .panel-principal {
+        margin-left: 60px;
+    }
+    .menu-lateral {
+        width: 60px;
+    }
+    .tarjetas-kpi {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .panel-principal {
+        margin-left: 0;
+        padding: 16px;
+    }
+    .menu-lateral {
+        left: -220px;
+        width: 220px;
+        background: var(--color-menu-bg, #222);
+        box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    }
+    .menu-lateral.abierto {
+        left: 0;
+    }
+    .btn-menu-movil {
+        display: block;
+    }
+    .tarjetas-kpi {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Navbar responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 16px;
+    }
+    .navbar-center {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+/* Mapa y alertas responsivas */
+@media (max-width: 768px) {
+    .mapa-unidades, .alertas-recientes {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Ajustes para móviles pequeños */
+@media (max-width: 480px) {
+    .tarjetas-kpi {
+        gap: 8px;
+    }
+    .navbar {
+        font-size: 14px;
+    }
+    .panel-principal {
+        padding: 8px;
+    }
+}

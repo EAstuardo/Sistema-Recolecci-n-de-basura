@@ -1,0 +1,83 @@
+/* Variables de color para modo claro */
+/* Se activa cuando NO hay tema definido o es explícitamente light */
+body:not([data-theme="dark"]), 
+body[data-theme="light"] 
+ {
+    --color-fondo: #e9c80e;
+    --color-texto: #222;
+    --color-navbar: #a77c60;
+    --color-menu-bg: #0d9e19;
+    --color-menu-text: #234d20;
+    --color-menu-hover: #1abb28;
+    --color-kpi-verde: #4caf50;
+    --color-kpi-amarillo: #ffb300;
+    --color-kpi-rojo: #e53935;
+    --color-tarjeta-bg: #e0cd1f;
+    --color-footer-bg: #fffbe6;
+    --color-alerta-bg: #fff3e0;
+    --color-borde: #e0e0e0;
+}
+
+/* Fondo general */
+body {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* Navbar */
+.navbar {
+    background: var(--color-navbar);
+    color: var(--color-texto);
+}
+
+/* Menú lateral */
+.menu-lateral {
+    background: var(--color-menu-bg);
+    color: var(--color-menu-text);
+}
+.menu-lateral a:hover, .menu-lateral a.activo {
+    background: var(--color-menu-hover);
+    color: var(--color-menu-text);
+}
+
+/* Panel principal */
+.panel-principal {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* Tarjetas KPI */
+.tarjeta-kpi {
+    background: var(--color-tarjeta-bg);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+.tarjeta-kpi.verde { border-left: 6px solid var(--color-kpi-verde); }
+.tarjeta-kpi.amarillo { border-left: 6px solid var(--color-kpi-amarillo); }
+.tarjeta-kpi.rojo { border-left: 6px solid var(--color-kpi-rojo); }
+
+/* Footer */
+.footer {
+    background: var(--color-footer-bg);
+    color: #888;
+}
+
+/* Dropdown y menú de opciones */
+.dropdown-opciones {
+    background: #fff;
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+
+/* Alertas */
+.alertas-recientes {
+    background: var(--color-alerta-bg);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+/* Botón activo para modo claro */
+#btn-modo-claro.activo {
+    border-bottom: 2px solid var(--color-kpi-verde);
+    background: #e8f5e9;
+}
