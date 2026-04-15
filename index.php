@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="Developer-6  Reportes y UI General/interfaz/css/modo_claro.css">
     <link rel="stylesheet" href="Developer-6  Reportes y UI General/interfaz/css/modo_oscuro.css">
     <script src="Developer-6  Reportes y UI General/interfaz/js/alternarTema.js"></script>
+    <script src="Developer-6  Reportes y UI General/interfaz/js/exportar.js"></script>
 </head>
 <body>
     <!-- Navbar superior -->
