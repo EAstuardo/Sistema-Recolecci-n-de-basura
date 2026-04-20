@@ -52,3 +52,31 @@ CREATE TABLE recibos (
   fecha_emision TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (id_pago) REFERENCES pagos(id_pago)
 );
+USE recolectora_db;
+
+CREATE TABLE camiones (
+  id_camion INT AUTO_INCREMENT PRIMARY KEY,
+  numero_placa VARCHAR(20) NOT NULL UNIQUE,
+  marca VARCHAR(100) NOT NULL,
+  modelo VARCHAR(100) NOT NULL,
+  anio INT NOT NULL,
+  capacidad_kg DECIMAL(10,2),
+  estado VARCHAR(20) DEFAULT 'ACTIVO',
+  id_colonia INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_colonia) REFERENCES colonias(id_colonia)
+);
+
+CREATE TABLE combustible (
+  id_combustible INT AUTO_INCREMENT PRIMARY KEY,
+  id_camion INT NOT NULL,
+  fecha DATE NOT NULL,
+  litros DECIMAL(10,2) NOT NULL,
+  costo_total DECIMAL(10,2) NOT NULL,
+  tipo_combustible VARCHAR(50) DEFAULT 'DIESEL',
+  id_usuario INT NOT NULL,
+  observaciones VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (id_camion) REFERENCES camiones(id_camion),
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
