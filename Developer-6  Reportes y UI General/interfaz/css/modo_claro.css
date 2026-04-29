@@ -16,7 +16,25 @@ body[data-theme="light"]
     --color-footer-bg: #9c752c;
     --color-alerta-bg: #fff3e0;
     --color-borde: #e0e0e0;
+    --colormenu-movil: #333;
+    --movil: white;
 }
+
+
+.btn-menu-movil { 
+    display: none; 
+    position: fixed; 
+    top: 16px; left: 16px; 
+    z-index: 200; 
+    background: var(--colormenu-movil); 
+    color: var(--movil); 
+    border: none; 
+    font-size: 24px; 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+}
+
 
 /* Fondo general */
 body {
