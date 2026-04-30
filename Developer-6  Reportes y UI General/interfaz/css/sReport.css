@@ -1,11 +1,10 @@
-
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
 }
 
 .reportes-bg {
-    background: #f3e2b3;
+    background: #da734b;
     min-height: 100vh;
     padding: 0;
 }
@@ -25,6 +24,7 @@ body {
     font-size: 2.1em;
     margin: 0;
 }
+
 .reportes-titulo .subtitulo {
     display: block;
     font-size: 0.95em;
@@ -37,6 +37,7 @@ body {
     display: flex;
     gap: 12px;
 }
+
 .btn-pdf {
     background: #c0392b;
     color: #fff;
@@ -48,9 +49,11 @@ body {
     font-size: 1em;
     transition: background 0.2s;
 }
+
 .btn-pdf:hover {
     background: #a93226;
 }
+
 .btn-excel {
     background: #218c3a;
     color: #fff;
@@ -62,42 +65,48 @@ body {
     font-size: 1em;
     transition: background 0.2s;
 }
+
 .btn-excel:hover {
     background: #186a2e;
 }
 
 .filtros-reportes {
-    background: #f8e7b7;
+    background: #a52802;
     padding: 18px 32px 10px 32px;
     border-radius: 0 0 12px 12px;
     margin-bottom: 18px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
+
 .filtros-row {
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
     align-items: flex-end;
 }
+
 .filtro-item {
     display: flex;
     flex-direction: column;
     min-width: 140px;
 }
+
 .filtro-item label {
     font-size: 0.98em;
-    color: #7a5d1a;
+    color: #ffffff;
     margin-bottom: 4px;
 }
+
 .filtro-item select,
 .filtro-item input[type="date"] {
     padding: 7px 10px;
     border-radius: 5px;
     border: 1px solid #cfa32a;
     background: #fffbe6;
-    font-size: 1em;
-    color: #5a4200;
+    font-size: 1.2em;
+    color: #000000;
 }
+
 .btn-filtrar {
     background: #e0b44c;
     color: #5a4200;
@@ -110,22 +119,24 @@ body {
     margin-top: 18px;
     transition: background 0.2s;
 }
+
 .btn-filtrar:hover {
     background: #cfa32a;
 }
 
 .tabla-container {
-    background: #fffbe6;
     padding: 18px 32px;
     border-radius: 12px;
     margin: 32px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
     background: transparent;
 }
+
 th {
     background: #e0b44c;
     color: #5a4200;
@@ -134,6 +145,7 @@ th {
     font-weight: bold;
     border-bottom: 2px solid #cfa32a;
 }
+
 td {
     padding: 10px 8px;
     border-bottom: 1px solid #e0b44c;
@@ -185,9 +197,9 @@ button:hover {
     background: #1b5e20;
 }
 
-/* TABLA */
+/* TABLA (segunda definición) */
 .tabla-container {
-    background: white;
+    background: #a52802;
     padding: 15px;
     border-radius: 10px;
 }
@@ -206,4 +218,8 @@ th {
 td {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+}
+
+.filtros-reportes .filtro-item label {
+    color: #ffffff !important;
 }

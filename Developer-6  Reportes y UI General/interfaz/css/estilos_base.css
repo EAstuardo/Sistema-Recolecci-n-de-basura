@@ -84,6 +84,7 @@ body {
     color: inherit;
     text-decoration: none;
     transition: background 0.2s;
+    border-radius: 10px;
 }
 
 .menu-lateral a:hover, .menu-lateral a.activo {
@@ -122,11 +123,11 @@ body {
 
 .tarjeta-kpi .kpi-label {
     font-size: 1em;
-    color: #888;
+    color: #ffffff;
 }
 
 .tarjeta-kpi.verde { border-left: 6px solid #4caf50; }
-.tarjeta-kpi.amarillo { border-left: 6px solid #ffb300; }
+.tarjeta-kpi.amarillo { border-left: 6px solid #da6158; }
 .tarjeta-kpi.rojo { border-left: 6px solid #e53935; }
 
 /* Botón de menú móvil */
@@ -171,7 +172,7 @@ body {
     cursor: pointer;
     font-size: 2.1rem;
     font-weight: bold;
-    color: #d1cf3d;
+    color: #0ba820;
     padding: 6px 9px;
     border-radius: 8px;
 }

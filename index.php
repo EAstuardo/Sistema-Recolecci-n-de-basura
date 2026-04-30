@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="Developer-6  Reportes y UI General/interfaz/css/modo_claro.css">
     <link rel="stylesheet" href="Developer-6  Reportes y UI General/interfaz/css/modo_oscuro.css">
     <script src="Developer-6  Reportes y UI General/interfaz/js/alternarTema.js"></script>
+    <script src="Developer-6  Reportes y UI General/interfaz/js/exportar.js"></script>
 </head>
 <body>
     <!-- Navbar superior -->
@@ -57,8 +58,10 @@
         <?php include "Developer-6  Reportes y UI General/interfaz/componentes/menu_lateral.php"; ?>
     </nav>
     <button class="btn-menu-movil" onclick="toggleMenuLateral()">
-        <img src="Developer-6  Reportes y UI General/interfaz/imagenes/menu-icon.png" alt="Menú">
+        ☰
     </button>
+    <script> function toggleMenuLateral() { const menu = document.getElementById("menu-lateral"); 
+    menu.classList.toggle("abierto"); } </script>
 
     <!-- Panel principal -->
     <main class="panel-principal">

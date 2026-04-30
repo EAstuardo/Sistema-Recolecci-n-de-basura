@@ -3,20 +3,38 @@
 body:not([data-theme="dark"]), 
 body[data-theme="light"] 
  {
-    --color-fondo: #e9c80e;
-    --color-texto: #222;
-    --color-navbar: #a77c60;
-    --color-menu-bg: #0d9e19;
-    --color-menu-text: #234d20;
-    --color-menu-hover: #1abb28;
+    --color-fondo: #dabb10;
+    --color-texto: #ffffff;
+    --color-navbar: #6e352b;
+    --color-menu-bg: #0d8817;
+    --color-menu-text: #ffffff;
+    --color-menu-hover: #bb401a;
     --color-kpi-verde: #4caf50;
-    --color-kpi-amarillo: #ffb300;
+    --color-kpi-amarillo: #ec6110;
     --color-kpi-rojo: #e53935;
-    --color-tarjeta-bg: #e0cd1f;
-    --color-footer-bg: #fffbe6;
+    --color-tarjeta-bg: #a52802;
+    --color-footer-bg: #9c752c;
     --color-alerta-bg: #fff3e0;
     --color-borde: #e0e0e0;
+    --colormenu-movil: #333;
+    --movil: white;
 }
+
+
+.btn-menu-movil { 
+    display: none; 
+    position: fixed; 
+    top: 16px; left: 16px; 
+    z-index: 200; 
+    background: var(--colormenu-movil); 
+    color: var(--movil); 
+    border: none; 
+    font-size: 24px; 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+}
+
 
 /* Fondo general */
 body {
@@ -38,6 +56,7 @@ body {
 .menu-lateral a:hover, .menu-lateral a.activo {
     background: var(--color-menu-hover);
     color: var(--color-menu-text);
+    border-radius: 8px;
 }
 
 /* Panel principal */

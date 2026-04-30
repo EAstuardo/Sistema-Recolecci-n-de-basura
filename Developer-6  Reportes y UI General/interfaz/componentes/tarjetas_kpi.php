@@ -3,7 +3,7 @@
     <h2 id="gasto_gasolina"></h2>
     <span class="kpi-variacion" id="variacion_gasolina"></span>
 </div>
-<!-- ...igual para los otros KPIs, con IDs únicos... -->
+<!-- .otros KPIs, con IDs únicos... -->
 
 <div class="tarjeta-kpi verde">
     <span class="kpi-label">Vehículos en operación</span>
